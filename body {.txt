@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #0f1724, #1e3a5f);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #0ea5a4;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.options label {
+  background: #f8fafc;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #0ea5a4;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #087372;
+}
+
+.message {
+  margin-top: 20px;
+  background: #e6f6f5;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+}
+
+.summary {
+  margin-top: 20px;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}

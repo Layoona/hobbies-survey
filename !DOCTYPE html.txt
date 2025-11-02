@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hobbies Survey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Hobbies Survey</h1>
+    <form id="surveyForm">
+      <div>
+        <label for="hobby">1. What is your favorite hobby?</label>
+        <input type="text" id="hobby" name="hobby" placeholder="e.g. Drawing, Football..." required>
+      </div>
+
+      <div>
+        <label>2. How often do you do this hobby?</label>
+        <div class="options">
+          <label><input type="radio" name="frequency" value="Every day" required> Every day</label>
+          <label><input type="radio" name="frequency" value="A few times a week"> A few times a week</label>
+          <label><input type="radio" name="frequency" value="Once a week"> Once a week</label>
+          <label><input type="radio" name="frequency" value="Rarely"> Rarely</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="start">3. How did you start this hobby?</label>
+        <textarea id="start" name="start" placeholder="Describe how you got into it"></textarea>
+      </div>
+
+      <div>
+        <label>4. Do you prefer doing your hobby alone or with others?</label>
+        <div class="options">
+          <label><input type="radio" name="alone" value="Alone" required> Alone</label>
+          <label><input type="radio" name="alone" value="With friends/family"> With friends/family</label>
+          <label><input type="radio" name="alone" value="Both"> Both</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="like">5. What do you like most about your hobby?</label>
+        <textarea id="like" name="like" placeholder="For example: relaxing, learning, fun..."></textarea>
+      </div>
+
+      <div>
+        <label for="skill">6. Have you learned any new skill from your hobby?</label>
+        <input type="text" id="skill" name="skill" placeholder="e.g. painting, teamwork...">
+      </div>
+
+      <div>
+        <label for="new">7. Would you like to try a new hobby? If yes, which one?</label>
+        <input type="text" id="new" name="new" placeholder="e.g. Photography, cooking...">
+      </div>
+
+      <div>
+        <label>8. How much time do you spend on your hobby each week?</label>
+        <div class="options">
+          <label><input type="radio" name="time" value="Less than 1 hour" required> Less than 1 hour</label>
+          <label><input type="radio" name="time" value="1–3 hours"> 1–3 hours</label>
+          <label><input type="radio" name="time" value="4–6 hours"> 4–6 hours</label>
+          <label><input type="radio" name="time" value="More than 6 hours"> More than 6 hours</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="important">9. Do you think hobbies are important? Why or why not?</label>
+        <textarea id="important" name="important" placeholder="Write your opinion..."></textarea>
+      </div>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+
+    <div class="message" id="message">
+      ✅ Thank you for completing the survey!
+    </div>
+
+    <div class="summary" id="summary" style="display: none;">
+      <h2>📋 Your Survey Summary</h2>
+      <div id="summaryContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('surveyForm');
+    const message = document.getElementById('message');
+    const summary = document.getElementById('summary');
+    const summaryContent = document.getElementById('summaryContent');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(form);
+      let output = '<ul>';
+      data.forEach((value, key) => {
+        output += `<li><strong>${key}:</strong> ${value}</li>`;
+      });
+      output += '</ul>';
+
+      summaryContent.innerHTML = output;
+      message.style.display = 'block';
+      summary.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
